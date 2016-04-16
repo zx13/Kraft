@@ -2,13 +2,13 @@
 var items=new Array()
 
 items["wood"]=10;
-items["mineral"]=5;
+items["mineral"]=0;
 items["sand"]=0;
 items["clay"]=0;
 items["cement"]=0;
 items["concrete"]=0;
 items["water"]=0;
-items["food"]=0;
+items["food"]=10;
 items["copper"]=0;
 items["gold"]=0;
 items["iron"]=0;
@@ -120,6 +120,7 @@ for(key in items){
 }
 maximums["wood"]=50
 maximums["mineral"]=20
+maximums["food"]=10
 
 var population=0;
 var ships=0;
@@ -4013,10 +4014,10 @@ function fire(b){
 function build(b){
 	if (b=="lumbermill"){
 
-		woodcost= Math.pow(1.1,(buildings["lumbermill"]))*3
+		foodcost= Math.pow(2,(buildings["lumbermill"]))*8
 
-		if (items["wood"]>=woodcost){
-			items["wood"]-=woodcost;
+		if (items["food"]>=foodcost){
+			items["food"]-=foodcost;
 			buildings["lumbermill"]+=1
 			$(".build_mine").show()
 			unlocked[".build_mine"]=1;
@@ -4841,17 +4842,20 @@ function calculatecost(){
 
 
 //Buildings
-woodcost= Math.pow(1.1,(buildings["lumbermill"]))*3
-if(items["wood"]<woodcost){
+foodcost= Math.pow(2,(buildings["lumbermill"]))*8
+if(items["food"]<foodcost){
 	$(".build_lumbermill").addClass("unavailable")
 }
 else
 {
 	$(".build_lumbermill").removeClass("unavailable")
 }
-$(".build_lumbermill").html("Lumbermill ("+buildings["lumbermill"]+")");
-$(".build_lumbermill").attr('tooltip', 'Wood: '+ parseFloat(items["wood"]).toFixed(2)+" / "+parseFloat(woodcost).toFixed(2))
-$(".build_lumbermill").attr('tooltip2', "Wood production: +0.20/s");
+$(".build_lumbermill").html("Land ("+buildings["lumbermill"]+")");
+if(maximums["food"]<foodcost){
+  $(".build_lumbermill").attr('style', 'color: red');
+}
+$(".build_lumbermill").attr('tooltip', 'Food: '+ parseFloat(items["food"]).toFixed(2)+" / "+parseFloat(foodcost).toFixed(2))
+//$(".build_lumbermill").attr('tooltip2', "Wood production: +0.20/s");
 
 woodcost= Math.pow(1.1,(buildings["mine"]))*2
 mineralcost=Math.pow(1.1, (buildings["mine"]))*3.5
@@ -8190,7 +8194,7 @@ else if(buildings["barracks"]>0)
 		buildstatus["barracks"]=0;
 		$(".build_barracks").addClass("off")
 }
-production["wood"]+=buildings["lumbermill"]/20;
+//production["wood"]+=buildings["lumbermill"]/20;
 production["mineral"]+=buildings["mine"]/20;
 production["water"]+=buildings["fountain"]/10;
 production["gold"]+=buildings["casino"]/1000;

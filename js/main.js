@@ -8310,7 +8310,6 @@ if(craft["coin"]<1){
 }
 else
 {
-
 	$(".trade_wood").removeClass("unavailable")
 	$(".trade_mineral").removeClass("unavailable")
 	$(".trade_food").removeClass("unavailable")
@@ -8320,6 +8319,18 @@ $(".trade_wood").html("Wood: " + Math.round(tradewood));
 $(".trade_mineral").html("Mineral: " + Math.round(trademineral));
 $(".trade_food").html("Food: " + Math.round(tradefood));
 $(".trade_sand").html("Sand: " + Math.round(tradesand));
+
+coincost=1000
+$(".invest_coin").html("Coins: 1000");
+if(craft["coin"]<coincost) {
+	$(".invest_coin").addClass("unavailable")
+} else {
+	$(".invest_coin").removeClass("unavailable")
+}
+$(".invest_coin").attr('tooltip', 'Coin: '+ parseFloat(craft["coin"]).toFixed(2)+" / "+parseFloat(coincost).toFixed(2))
+$(".invest_coin").attr('tooltip3', "Gives back 2000 coins at a rate of 0.1/s");
+
+
 }
 
 
@@ -8746,12 +8757,11 @@ function trade(b){
 			items["sand"]+=Math.round(tradesand)
 			craft["coin"]-=1
 		}
-
 	}
-
-
-
-
+	if(craft["coin"]>=1000 && b=='coin'){
+    bonus["invest"]+=2000
+    craft["coin"]-=1000
+	}
 
 
 }

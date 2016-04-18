@@ -56,6 +56,7 @@ bonus["auto"]=0;
 bonus["legacy"]=0;
 bonus["energy"]=0;
 bonus["rush"]=0;
+bonus["deposit"]=0;
 
 var buildings=new Array();
 
@@ -8310,7 +8311,6 @@ if(craft["coin"]<1){
 }
 else
 {
-
 	$(".trade_wood").removeClass("unavailable")
 	$(".trade_mineral").removeClass("unavailable")
 	$(".trade_food").removeClass("unavailable")
@@ -8320,6 +8320,7 @@ $(".trade_wood").html("Wood: " + Math.round(tradewood));
 $(".trade_mineral").html("Mineral: " + Math.round(trademineral));
 $(".trade_food").html("Food: " + Math.round(tradefood));
 $(".trade_sand").html("Sand: " + Math.round(tradesand));
+$(".deposit_coin").html("Deposit Coin (" + Math.round(bonus["deposit"]) + ")");
 }
 
 
@@ -8622,6 +8623,10 @@ if (bonus["invest"]>=0.025)
 	bonus["invest"]-=0.025
 	craft["coin"]+=0.025
 }
+if (bonus["deposit"]>0)
+{
+  craft["coin"]+=bonus["deposit"]*.0000025
+}
 var rushbonus=1
 if(bonus["rush"]>=1){
 	bonus["rush"]--
@@ -8748,10 +8753,10 @@ function trade(b){
 		}
 
 	}
-
-
-
-
+  if (b=="coin"){
+    bonus["deposit"]+=craft["coin"]
+    craft["coin"]=0    
+  }
 
 
 }

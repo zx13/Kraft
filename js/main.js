@@ -1503,10 +1503,10 @@ var techdata = {
     desc: ["Allows exploration expeditions"]
   },
   ironfoundry: {
-  	name: "Iron Foundry",
-  	cost: {wood: 1000, mineral: 500, food: 200},
-  	unlock: [".build_foundry"],
-  	desc: ["Allows the construction of foundrys"]
+    name: "Iron Foundry",
+    cost: {wood: 1000, mineral: 500, food: 200},
+    unlock: [".build_foundry"],
+    desc: ["Allows the construction of foundrys"]
   },
   metallurgy: {
     cost: {food: 200, copper: 10, iron: 5},
@@ -1519,9 +1519,9 @@ var techdata = {
     desc: ["Allows the crafting of Iron Swords and the hiring of swordman"]
   },
   storage: {
-  	name: "Storage management",
-  	cost: {wood: 500, mineral: 500, iron: 15},
-  	unlock: ["#craftingpane", ".craft_block", ".build_barn"],
+    name: "Storage management",
+    cost: {wood: 500, mineral: 500, iron: 15},
+    unlock: ["#craftingpane", ".craft_block", ".build_barn"],
     desc: ["Unlocks better storage methods"]
   },
   currency: {
@@ -1536,20 +1536,20 @@ var techdata = {
     desc: ["Allows forging gold coins"]
   },
   exchange: {
-  	cost: {food: 800, coin: 3},
-  	unlock: [".build_market"],
-  	desc: ["Allow the construction of markets"]
+    cost: {food: 800, coin: 3},
+    unlock: [".build_market"],
+    desc: ["Allow the construction of markets"]
   },
   bronze: {
-  	cost: {iron: 40, copper: 40},
-  	unlock: [".craft_bronze", ".build_statue"],
-  	desc: ["Allows foundrys to smelt a bit of tin",
+    cost: {iron: 40, copper: 40},
+    unlock: [".craft_bronze", ".build_statue"],
+    desc: ["Allows foundrys to smelt a bit of tin",
       "Unlocks bronze crafting"]
   },
   bronzetools: {
-  	name: "Bronze tools",
-  	cost: {bronze: 2},
-  	bonus: {wood: 0.20, mineral: 0.20, food: 0.20, copper: 0.10, iron: 0.10, tin: 0.10}
+    name: "Bronze tools",
+    cost: {bronze: 2},
+    bonus: {wood: 0.20, mineral: 0.20, food: 0.20, copper: 0.10, iron: 0.10, tin: 0.10}
   },
   charcoal: {
     cost: {wood: 4000, mineral: 2000},
@@ -1572,9 +1572,9 @@ var techdata = {
     desc: ["Enhances crafting by allowing the building of workbenchs"]
   },
   steeltools: {
-  	name: "Steel tools",
-  	cost: {steel: 10},
-  	bonus: {wood: 0.30, mineral: 0.3, food: 0.3, copper: 0.1, iron: 0.1, tin: 0.1, steel: 0.05}
+    name: "Steel tools",
+    cost: {steel: 10},
+    bonus: {wood: 0.30, mineral: 0.3, food: 0.3, copper: 0.1, iron: 0.1, tin: 0.1, steel: 0.05}
   },
   husbandry: {
     cost: {food: 2500},
@@ -1616,8 +1616,8 @@ var techdata = {
     desc: ["Unlocks the buildings of shipyards"]
   },
   sailing: {
-  	cost: {plank: 100},
-  	unlock: [".build_docks"],
+    cost: {plank: 100},
+    unlock: [".build_docks"],
     desc: ["Allows building docks to store ships"]
   },
   trade: {
@@ -1626,14 +1626,14 @@ var techdata = {
     desc: ["Allows hiring sailors to embark on trade missions"]
   },
   cache: {
-  	cost: {mineral: 22500, steel: 100, plank: 500},
+    cost: {mineral: 22500, steel: 100, plank: 500},
     unlock: [".craft_chest"],
     desc: ["Allows crafting chests to store resources"]
   },
   specialization: {
-  	cost: {knowledge: 500},
-  	unlock: [".research_economy", ".research_science", ".research_military"],
-  	desc: ["Allows you to choose where your research should be headed",
+    cost: {knowledge: 500},
+    unlock: [".research_economy", ".research_science", ".research_military"],
+    desc: ["Allows you to choose where your research should be headed",
       "New technologies will be unlocked based on your research"]
   },
   geology: {
@@ -1646,9 +1646,9 @@ var techdata = {
     max: {gold: 2}
   },
   tactics: {
-  	cost: {morale: 35, knowledge: 50},
-  	bonus: {power: 0.2},
-  	max: {morale: 2}
+    cost: {morale: 35, knowledge: 50},
+    bonus: {power: 0.2},
+    max: {morale: 2}
   },
   healing: {
     cost: {coin: 100, knowledge: 200},
@@ -1657,151 +1657,151 @@ var techdata = {
     desc: ["Allows hiring medics to aid during combat"]
   },
   savings: {
-  	cost: {coin: 100, knowledge: 200},
-  	unlock: [".build_bank"],
-  	desc: ["Allows building banks to store gold and produce coins."]
+    cost: {coin: 100, knowledge: 200},
+    unlock: [".build_bank"],
+    desc: ["Allows building banks to store gold and produce coins."]
   },
   studies: {
-  	cost: {knowledge: 400},
-  	unlock: [".hire_scientist"],
-  	desc: ["Allows hiring scientists that use funds to gain knowledge."]
+    cost: {knowledge: 400},
+    unlock: [".hire_scientist"],
+    desc: ["Allows hiring scientists that use funds to gain knowledge."]
   },
   organization: {
-  	cost: {block: 500, knowledge: 300},
-  	bonus: {storage: 0.2}
- 	},
- 	culturaltrade: {
+    cost: {block: 500, knowledge: 300},
+    bonus: {storage: 0.2}
+   },
+   culturaltrade: {
     name: "Cultural Trade",
     cost: {bronze: 50, knowledge: 500},
     desc: ["Allows getting knowledge when trading with other civilizations"]
- 	},
- 	intelligence: {
+  },
+   intelligence: {
     cost: {steel: 100, knowledge: 500},
     desc: ["When you win a fight, you get a chance to steal knowledge from the enemy"]
- 	},
- 	crushing: {
+  },
+   crushing: {
     cost: {pickaxe: 500, knowledge: 500},
     unlock: [".build_crusher"],
     desc: ["Allows building crushing mills to produce sand"]
- 	},
- 	floatglass: {
+  },
+  floatglass: {
     name: "Float glass",
     cost: {tin: 200, sand: 600, knowledge: 500},
     unlock: [".craft_glass"],
     desc: ["A process to create sheets of glass"]
- 	},
- 	canteen: {
- 		cost: {knowledge: 700},
- 		max: {water: 20},
- 		desc: ["Allows to find or steal water bottles to further increase water storage"]
- 	},
- 	galleon: {
- 		cost: {wood: 40000, plank: 1000, knowledge: 800},
- 		unlock: [".hire_galleon"],
- 		desc: ["Galleons are mega ships that can carry loads of resources"]
- 	},
- 	contracts: {
- 		cost: {coin: 200, knowledge: 500},
- 		bonus: {wood: 0.1, mineral: 0.1, knowledge: 0.1, morale: 0.1}
- 	},
- 	glassblowing: {
- 		cost: {glass: 20, knowledge: 500},
- 		unlock: [".craft_bottle"],
- 		desc: ["Allows you to craft bottles to store water and other liquids."]
- 	},
- 	rampage: {
+  },
+  canteen: {
+    cost: {knowledge: 700},
+    max: {water: 20},
+    desc: ["Allows to find or steal water bottles to further increase water storage"]
+  },
+  galleon: {
+    cost: {wood: 40000, plank: 1000, knowledge: 800},
+    unlock: [".hire_galleon"],
+    desc: ["Galleons are mega ships that can carry loads of resources"]
+  },
+  contracts: {
+    cost: {coin: 200, knowledge: 500},
+    bonus: {wood: 0.1, mineral: 0.1, knowledge: 0.1, morale: 0.1}
+  },
+  glassblowing: {
+    cost: {glass: 20, knowledge: 500},
+    unlock: [".craft_bottle"],
+    desc: ["Allows you to craft bottles to store water and other liquids."]
+  },
+  rampage: {
     cost: {sword: 1000, knowledge: 800},
     unlock: [".craft_greatsword", ".hire_bersek"],
     desc: ["A thousand swords were used to perfect the technique, allows crafting greatswords,",
-			"and hiring berseks"]
- 	},
- 	construction: {
+      "and hiring berseks"]
+  },
+  construction: {
     cost: {block: 2000, knowledge: 800},
     unlock: [".build_blockyard"],
     desc: ["Lets you build blockyards to automate block manufacturing"]
- 	},
- 	architecture: {
- 		cost: {block: 1500, structure: 500, steel: 150, knowledge: 1000},
- 		unlock: [".craft_frame"],
- 		desc: ["Allows crafting frames, a complex building material."]
- 	},
- 	chemistry: {
- 		cost: {bottle: 50, knowledge: 1000},
- 		unlock: [".build_laboratory"],
- 		desc: ["Lets you build laboratories where scientists can work"]
- 	},
- 	elephantry: {
- 		cost: {supplies: 100, knowledge: 800},
- 		unlock: [".hire_warelephant"],
+  },
+  architecture: {
+    cost: {block: 1500, structure: 500, steel: 150, knowledge: 1000},
+    unlock: [".craft_frame"],
+    desc: ["Allows crafting frames, a complex building material."]
+  },
+  chemistry: {
+    cost: {bottle: 50, knowledge: 1000},
+    unlock: [".build_laboratory"],
+    desc: ["Lets you build laboratories where scientists can work"]
+  },
+  elephantry: {
+    cost: {supplies: 100, knowledge: 800},
+    unlock: [".hire_warelephant"],
     desc: ["Allows you to ride elephants into war"]
- 	},
- 	wareconomy: {
- 		name: "War economy",
+  },
+  wareconomy: {
+    name: "War economy",
     cost: {gold: 60, morale: 50, knowledge: 800},
     bonus: {food: 0.1, gold: 0.1}
- 	},
- 	undergroundstorage: {
- 		name: "Underground storage",
+  },
+  undergroundstorage: {
+    name: "Underground storage",
     cost: {chest: 50, knowledge: 500},
     unlock: [".build_bunker"],
     desc: ["Allows building bunkers to store bulk materials"]
- 	},
- 	risk: {
+  },
+  risk: {
     cost: {token: 200, knowledge: 800},
     unlock: [".playx10", ".playx100"],
     desc: ["Lets you play x10 and x100 in the casino"]
- 	},
- 	investment: {
- 		cost: {coin: 1000, knowledge: 300},
- 		bonus: {invest: 2000},
- 		desc: ["Gives back 2000 coins at a rate of 0.1/s"]
- 	},
- 	domestication: {
- 		cost: {food: 10000, water: 200, knowledge: 800},
+  },
+  investment: {
+    cost: {coin: 1000, knowledge: 300},
+    bonus: {invest: 2000},
+    desc: ["Gives back 2000 coins at a rate of 0.1/s"]
+  },
+  domestication: {
+    cost: {food: 10000, water: 200, knowledge: 800},
     desc: ["Allows you to take back elephants from expeditions"]
- 	},
- 	expansion: {
- 		cost: {supplies: 200, plank: 2000},
- 		unlock: [".expansionsea", ".territory"],
- 		desc: ["Allows you to conquest new territory by fleet fights"]
- 	},
- 	investigation: {
- 		cost: {chemicals: 15, knowledge: 800},
+  },
+  expansion: {
+    cost: {supplies: 200, plank: 2000},
+    unlock: [".expansionsea", ".territory"],
+    desc: ["Allows you to conquest new territory by fleet fights"]
+  },
+  investigation: {
+    cost: {chemicals: 15, knowledge: 800},
     unlock: [".build_scienceoutpost"],
     desc: ["Allows you to build scientific outposts in conquered territory"]
   },
   internationalization: {
-  	cost: {gold: 70, bronze: 300, knowledge: 800},
-  	unlock: [".build_tradeoutpost"],
-  	desc: ["Allows you to build trade outposts in conquered territory"]
+    cost: {gold: 70, bronze: 300, knowledge: 800},
+    unlock: [".build_tradeoutpost"],
+    desc: ["Allows you to build trade outposts in conquered territory"]
   },
   camps: {
-  	cost: {horse: 10, elephant: 2, knowledge: 800},
-  	unlock: [".build_militaryoutpost"],
-  	desc: ["Allows you to build military outposts in conquered territory"]
+    cost: {horse: 10, elephant: 2, knowledge: 800},
+    unlock: [".build_militaryoutpost"],
+    desc: ["Allows you to build military outposts in conquered territory"]
   },
   fireship: {
-  	cost: {wood: 80000, frame: 5, knowledge: 1000},
-  	unlock: [".hire_fireship"],
-  	desc: ["Allows you to build fire ships, an agressive military ship"]
+    cost: {wood: 80000, frame: 5, knowledge: 1000},
+    unlock: [".hire_fireship"],
+    desc: ["Allows you to build fire ships, an agressive military ship"]
   },
   deals: {
-  	cost: {gold: 100, coin: 1500, knowledge: 1200},
-  	unlock: [".deals"],
-  	desc: ["A merchant will appear in the market every 10 min with a new offer"]
+    cost: {gold: 100, coin: 1500, knowledge: 1200},
+    unlock: [".deals"],
+    desc: ["A merchant will appear in the market every 10 min with a new offer"]
   },
   careening: {
-  	cost: {wood: 80000, plank: 1000, knowledge: 800},
-  	bonus: {shipspeed: 30, shiphp: 0.2}
+    cost: {wood: 80000, plank: 1000, knowledge: 800},
+    bonus: {shipspeed: 30, shiphp: 0.2}
   },
   finding: {
-  	cost: {morale: 60, food: 20000, knowledge: 1200},
-  	desc: ["Allows you to find more complex materials in expeditions, like sand, clay or bricks"]
+    cost: {morale: 60, food: 20000, knowledge: 1200},
+    desc: ["Allows you to find more complex materials in expeditions, like sand, clay or bricks"]
   },
   openmining: {
-  	cost: {mineral: 80000, pickaxe: 3000, knowledge: 1200},
-  	unlock: [".build_quarry"],
-  	desc: ["Allows you to build quarrys to extract clay from the ground"]
+    cost: {mineral: 80000, pickaxe: 3000, knowledge: 1200},
+    unlock: [".build_quarry"],
+    desc: ["Allows you to build quarrys to extract clay from the ground"]
   }
 };
 

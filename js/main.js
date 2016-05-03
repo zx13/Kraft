@@ -1669,17 +1669,17 @@ var techdata = {
   organization: {
     cost: {block: 500, knowledge: 300},
     bonus: {storage: 0.2}
-   },
-   culturaltrade: {
+  },
+  culturaltrade: {
     name: "Cultural Trade",
     cost: {bronze: 50, knowledge: 500},
     desc: ["Allows getting knowledge when trading with other civilizations"]
   },
-   intelligence: {
+  intelligence: {
     cost: {steel: 100, knowledge: 500},
     desc: ["When you win a fight, you get a chance to steal knowledge from the enemy"]
   },
-   crushing: {
+  crushing: {
     cost: {pickaxe: 500, knowledge: 500},
     unlock: [".build_crusher"],
     desc: ["Allows building crushing mills to produce sand"]
@@ -1802,6 +1802,14 @@ var techdata = {
     cost: {mineral: 80000, pickaxe: 3000, knowledge: 1200},
     unlock: [".build_quarry"],
     desc: ["Allows you to build quarrys to extract clay from the ground"]
+  },
+  seacaptain: {
+    cost: {plank: 3000, coin: 800, knowledge: 1200},
+    unlock: [".leader_foehn"]
+  },
+  wisdom: {
+    cost: {knowledge: 1300},
+    unlock: [".leader_alfear"]
   }
 };
 
@@ -1877,50 +1885,6 @@ function research(b){
     }
 
   }
-	else if (b=="seacaptain" && technologies["seacaptain"]==0){
-
-
-		plankcost=3000;
-		coincost=800;
-		knowledgecost=1200;
-		
-
-
-		if (items["knowledge"]>=knowledgecost && craft["plank"]>=plankcost && craft["coin"]>=coincost){
-
-			craft["plank"]-=plankcost
-			craft["coin"]-=coincost
-			items["knowledge"]-=knowledgecost;
-
-			technologies["seacaptain"]++
-
-			$(".leader_foehn").show()
-			unlocked[".leader_foehn"]=1;
-
-		}
-
-	}
-	else if (b=="wisdom" && technologies["wisdom"]==0){
-
-
-
-		knowledgecost=1300;
-		
-
-
-		if (items["knowledge"]>=knowledgecost){
-
-
-			items["knowledge"]-=knowledgecost;
-
-			technologies["wisdom"]++
-
-			$(".leader_alfear").show()
-			unlocked[".leader_alfear"]=1;
-
-		}
-
-	}
 	else if (b=="masonry" && technologies["masonry"]==0){
 
 
@@ -5215,6 +5179,12 @@ for (b in techdata) {
     tooltips.push('+' + (tech.max[techmax]) + ' max ' + techmax);
   }
 
+  for (unlock in tech.unlock) {
+    if (unlock.substr(1,6) == 'leader') {
+    	tooltips.push("Unlocks a new leader")
+    }
+  }
+
   if ('desc' in tech) {
     for (techdesc of tech.desc) {
     	tooltips.push(techdesc)
@@ -5263,42 +5233,6 @@ $(".tech_multitasking").html("Multitasking" + (technologies["multitasking"] >0 ?
 $(".tech_multitasking").attr('tooltip', 'Pickaxe: '+ parseFloat(craft["pickaxe"]).toFixed(2)+" / "+parseFloat(pickaxecost).toFixed(2))
 $(".tech_multitasking").attr('tooltip2', 'Knowledge: '+ parseFloat(items["knowledge"]).toFixed(2)+" / "+parseFloat(knowledgecost).toFixed(2))
 $(".tech_multitasking").attr('tooltip4', "Miners now also extract some clay.");
-
-
-plankcost=3000;
-coincost=800;
-knowledgecost=1200;
-if(items["knowledge"]<knowledgecost || craft["coin"]<coincost || craft["plank"]<plankcost){
-	$(".tech_seacaptain").addClass("unavailable")
-}
-else
-{
-	$(".tech_seacaptain").removeClass("unavailable")
-}
-unattainable=maximums["knowledge"]*(bonus["storage"]+1)<knowledgecost
-set_unattainable(".tech_seacaptain", unattainable);
-$(".tech_seacaptain").addClass((technologies["seacaptain"] >0 ? "researched" : ""))
-$(".tech_seacaptain").html("Sea captain" + (technologies["seacaptain"] >0 ? " (researched)" : ""));
-$(".tech_seacaptain").attr('tooltip', 'Plank: '+ parseFloat(craft["plank"]).toFixed(2)+" / "+parseFloat(plankcost).toFixed(2))
-$(".tech_seacaptain").attr('tooltip2', 'Coin: '+ parseFloat(craft["coin"]).toFixed(2)+" / "+parseFloat(coincost).toFixed(2))
-$(".tech_seacaptain").attr('tooltip3', 'Knowledge: '+ parseFloat(items["knowledge"]).toFixed(2)+" / "+parseFloat(knowledgecost).toFixed(2))
-$(".tech_seacaptain").attr('tooltip5', "Unlocks a new  leader.");
-
-
-knowledgecost=1300;
-if(items["knowledge"]<knowledgecost){
-	$(".tech_wisdom").addClass("unavailable")
-}
-else
-{
-	$(".tech_wisdom").removeClass("unavailable")
-}
-unattainable=maximums["knowledge"]*(bonus["storage"]+1)<knowledgecost
-set_unattainable(".tech_wisdom", unattainable);
-$(".tech_wisdom").addClass((technologies["wisdom"] >0 ? "researched" : ""))
-$(".tech_wisdom").html("Wisdom" + (technologies["wisdom"] >0 ? " (researched)" : ""));
-$(".tech_wisdom").attr('tooltip', 'Knowledge: '+ parseFloat(items["knowledge"]).toFixed(2)+" / "+parseFloat(knowledgecost).toFixed(2))
-$(".tech_wisdom").attr('tooltip3', "Unlocks a new leader.");
 
 
 framecost=20;
